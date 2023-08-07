@@ -19,3 +19,7 @@ function showData(dataArray) {
 }
 
 // Escribe el código necesario para realizar el fetch al archivo con los datos y mostrar los estudiantes con la función showData
+fetch(DATA_URL) //se realiza una solicitud fetch() a la URL especificada en DATA_URL. Esto devuelve una promesa que resuelve la respuesta de la solicitud.
+ // Utilizamos .then() dos veces en cadena para procesar la respuesta.
+  .then(response => response.json()) //se llama a response.json() para convertir los datos en formato JSON de la respuesta. Esto devuelve otra promesa que resuelve los datos en formato JSON
+  .then(data => showData(data.students)); //En la segunda cadena .then(), se llama a la función showData(data.students) para mostrar los estudiantes en el contenedor.
